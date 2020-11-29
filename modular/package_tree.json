@@ -49,7 +49,6 @@
       "utils": [
         "__init__.py", 
         "cfg.py", 
-        "package_tree.json", 
         "update_package.py"
       ]
     }, 

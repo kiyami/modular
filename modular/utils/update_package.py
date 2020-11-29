@@ -19,6 +19,8 @@ def path_to_dict(path_):
 
 
 def update_package_tree():
+    os.chdir(_package_path)
+
     folder_tree = path_to_dict(_package_path)
 
     with open(_json_file, mode="w+") as f:
