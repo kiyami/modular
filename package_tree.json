@@ -1,0 +1,60 @@
+{
+  "modular": [
+    {
+      "core": [
+        {
+          "adapters": [
+            "__init__.py"
+          ]
+        }, 
+        "__init__.py"
+      ]
+    }, 
+    {
+      "db": [
+        "__init__.py", 
+        "db.cfg"
+      ]
+    }, 
+    {
+      "gui": [
+        "__init__.py", 
+        "gui.cfg"
+      ]
+    }, 
+    {
+      "modules": [
+        {
+          "mod1": [
+            "__init__.py", 
+            "mod1.cfg"
+          ]
+        }, 
+        {
+          "mod2": [
+            "__init__.py", 
+            "mod2.cfg"
+          ]
+        }, 
+        "__init__.py"
+      ]
+    }, 
+    {
+      "tests": [
+        "__init__.py", 
+        "tests.py"
+      ]
+    }, 
+    {
+      "utils": [
+        "__init__.py", 
+        "cfg.py", 
+        "package_tree.json", 
+        "update_package.py"
+      ]
+    }, 
+    "__init__.py", 
+    "__main__.py", 
+    "modular.cfg"
+  ]
+}
