@@ -1,19 +1,16 @@
 import os
 import json
-import pprint
 
 
 _package_path = os.path.dirname(os.path.realpath(__file__)).rsplit(os.sep, 1)[0]
 _json_file = "package_tree.json"
 
-__all__ = ["update_package_tree"]
 
-
-def path_to_dict(path_):
+def _path_to_dict(path_):
     for root, dirs, files in os.walk(path_):
         _key = root.rsplit(os.sep)[-1]
         tree = {_key: []}
-        tree[_key].extend([path_to_dict(os.path.join(root, d)) for d in dirs])
+        tree[_key].extend([_path_to_dict(os.path.join(root, d)) for d in dirs])
         tree[_key].extend(files)
         return tree
 
@@ -21,7 +18,7 @@ def path_to_dict(path_):
 def update_package_tree():
     os.chdir(_package_path)
 
-    folder_tree = path_to_dict(_package_path)
+    folder_tree = _path_to_dict(_package_path)
 
     with open(_json_file, mode="w+") as f:
         json.dump(folder_tree, f, indent=2)
