@@ -1,3 +1,6 @@
+from .core.core_main import main
 
 
-print("main")
+def run_app():
+    print("App is running..")
+    main()

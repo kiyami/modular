@@ -1,59 +1,62 @@
 {
   "modular": [
     {
-      "core": [
-        {
-          "adapters": [
-            "__init__.py"
-          ]
-        }, 
-        "__init__.py"
+      "adapters": [
+        "adapter_main.py",
+        "db_adapter.py",
+        "gui_adapter.py",
+        "module_adapter.py"
       ]
-    }, 
+    },
+    {
+      "core": [
+        "core_main.py"
+      ]
+    },
     {
       "db": [
-        "__init__.py", 
-        "db.cfg"
+        "db.cfg",
+        "db_main.py"
       ]
-    }, 
+    },
     {
       "gui": [
-        "__init__.py", 
-        "gui.cfg"
+        ".DS_Store",
+        "gui.cfg",
+        "gui_main.py"
       ]
-    }, 
+    },
     {
       "modules": [
         {
           "mod1": [
-            "__init__.py", 
-            "mod1.cfg"
+            ".DS_Store",
+            "config.py",
+            "gui.py",
+            "mod1_adapter.py"
           ]
-        }, 
+        },
         {
           "mod2": [
-            "__init__.py", 
             "mod2.cfg"
           ]
-        }, 
-        "__init__.py"
+        }
       ]
-    }, 
+    },
     {
       "tests": [
-        "__init__.py", 
         "tests.py"
       ]
-    }, 
+    },
     {
       "utils": [
-        "__init__.py", 
-        "cfg.py", 
-        "update_package.py"
+        "cfg.py",
+        "update_package.py",
+        "utils_main.py"
       ]
-    }, 
-    "__init__.py", 
-    "__main__.py", 
-    "modular.cfg"
+    },
+    ".DS_Store",
+    "modular.cfg",
+    "package_tree.json"
   ]
 }

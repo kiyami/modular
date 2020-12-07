@@ -6,12 +6,17 @@ _package_path = os.path.dirname(os.path.realpath(__file__)).rsplit(os.sep, 1)[0]
 _json_file = "package_tree.json"
 
 
-def _path_to_dict(path_):
-    for root, dirs, files in os.walk(path_):
+def _path_to_dict(_path):
+    for root, dirs, files in os.walk(_path):
+
+        dirs = [d for d in dirs if (not d.startswith("__")) and (not d.endswith(".pyc"))]
+        files = [file for file in files if (not file.startswith("__")) and (not file.endswith(".pyc"))]
+
         _key = root.rsplit(os.sep)[-1]
         tree = {_key: []}
         tree[_key].extend([_path_to_dict(os.path.join(root, d)) for d in dirs])
         tree[_key].extend(files)
+
         return tree
 
 
